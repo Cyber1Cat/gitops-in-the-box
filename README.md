@@ -2,7 +2,7 @@
 
 A production-grade, local GitOps laboratory running on Kubernetes (Minikube/Docker) and managed entirely by ArgoCD via the **App-of-Apps pattern**. 
 
-## 🗺️ Repository Architecture
+## Repository Architecture
 
 This repository uses a declarative "Root-of-Roots" approach to isolate infrastructure, applications, and configurations:
 
@@ -17,7 +17,7 @@ This repository uses a declarative "Root-of-Roots" approach to isolate infrastru
 
 ---
 
-## 🚀 Local Environment Management
+## Local Environment Management
 
 To easily manage this cluster on macOS without locking up terminal windows with active network tunnels, add the following automation controls to your `~/.zshrc` profile.
 
