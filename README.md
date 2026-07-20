@@ -1,11 +1,6 @@
 # 📦 Gitops-in-the-box
 
-<p align="center">
-  <img src="https://shields.io" alt="Kubernetes">
-  <img src="https://shields.io" alt="ArgoCD">
-  <img src="https://shields.io" alt="Sealed Secrets">
-  <img src="https://shields.io" alt="macOS">
-</p>
+![Kubernetes](https://shields.io) ![ArgoCD](https://shields.io) ![Sealed Secrets](https://shields.io) ![macOS](https://shields.io)
 
 A production-grade, local GitOps laboratory built to mirror enterprise cloud environments. This repository implements a fully automated cluster ecosystem managed entirely by ArgoCD via the **App-of-Apps design pattern**.
 
