@@ -1,4 +1,4 @@
-# 📦 gitops-in-the-box
+# 📦 Gitops-in-the-box
 
 <p align="center">
   <img src="https://shields.io" alt="Kubernetes">
