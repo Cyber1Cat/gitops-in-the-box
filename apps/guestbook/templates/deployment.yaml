@@ -16,8 +16,8 @@ spec:
       - name: main
         image: registry.k8s.io/e2e-test-images/agnhost:2.39
         ports:
-        - containerPort: 8080
-        args: ["netexec", "--http-port=8080"]
+        - containerPort: {{ .Values.appPort | default 8080 }}
+        args: ["netexec", "--http-port={{ .Values.appPort | default 8080 }}"]
         env:
         - name: DB_USERNAME
           valueFrom:
@@ -36,12 +36,12 @@ spec:
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8080
+            port: {{ .Values.appPort | default 8080 }}
           initialDelaySeconds: 5
           periodSeconds: 5
         livenessProbe:
           httpGet:
             path: /
-            port: 8080
+            port: {{ .Values.appPort | default 8080 }}
           initialDelaySeconds: 10
           periodSeconds: 10
