@@ -12,10 +12,11 @@ spec:
     targetRevision: 69.3.1
     chart: kube-prometheus-stack
   destination:
-    server: https://default.svc
+    server: https://kubernetes.default.svc
     namespace: monitoring
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    createNamespace: true
+    syncOptions:
+      - CreateNamespace=true
