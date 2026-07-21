@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
-  namespace: default
 spec:
-  replicas: 3
+  replicas: {{ .Values.replicaCount | default 1 }}
   selector:
     matchLabels:
       app: guestbook-ui
@@ -19,6 +18,10 @@ spec:
         ports:
         - containerPort: 8080
         args: ["netexec", "--http-port=8080"]
+        {{- if .Values.resources }}
+        resources:
+          {{- toYaml .Values.resources | nindent 10 }}
+        {{- end }}
         readinessProbe:
           httpGet:
             path: /ready
