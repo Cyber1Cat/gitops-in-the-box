@@ -6,14 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'git@github.com:Cyber1Cat/gitops-in-the-box.git'
+    repoURL: 'https://github.com'
     targetRevision: main
     path: apps/guestbook
     helm:
       valueFiles:
         - values-prod.yaml
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: 'https://default.svc'
     namespace: prod
   syncPolicy:
     automated:
