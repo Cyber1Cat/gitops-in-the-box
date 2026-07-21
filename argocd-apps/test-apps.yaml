@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-guestbook-workload
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'git@github.com:Cyber1Cat/gitops-in-the-box.git'
+    targetRevision: main
+    path: apps/guestbook
+    helm:
+      valueFiles:
+        - values-test.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: test
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
