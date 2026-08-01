@@ -22,7 +22,7 @@ spec:
         - name: DB_USERNAME
           valueFrom:
             secretKeyRef:
-              name: my-first-secret
+              name: {{ .Values.secretName | default "my-first-secret" }}
               key: username
         - name: DB_PASSWORD
           valueFrom:
