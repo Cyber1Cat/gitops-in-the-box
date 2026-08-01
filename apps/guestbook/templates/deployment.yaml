@@ -35,7 +35,7 @@ spec:
         {{- end }}
         readinessProbe:
           httpGet:
-            path: /ready
+            path: /
             port: {{ .Values.appPort | default 8080 }}
           initialDelaySeconds: 5
           periodSeconds: 5
