@@ -8,3 +8,6 @@ resources:
     cpu: "100m"
     memory: "128Mi"
 appPort: 8081
+ingress:
+  enabled: true
+  host: guestbook.test

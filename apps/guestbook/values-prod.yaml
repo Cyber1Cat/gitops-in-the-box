@@ -8,3 +8,6 @@ resources:
     cpu: "250m"
     memory: "256Mi"
 appPort: 8082
+ingress:
+  enabled: true
+  host: guestbook.prod
