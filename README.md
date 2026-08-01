@@ -61,6 +61,19 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.pas
 ```
 * 👤 **Default User:** `admin`
 
+### 🔑 Fast-Track Cluster Wipes (Sealed Secrets Key Persistence)
+Before wiping your cluster, back up the private encryption key to your MacBook local storage:
+
+```bash
+kubectl get secret -n kube-system -l sealedsecrets.bitnami.com/sealed-secrets-key -o yaml > sealed-secrets-master-key.yaml
+```
+
+When booting a fresh cluster with `devops-on`, apply this file first before installing your apps:
+
+```bash
+kubectl apply -f sealed-secrets-master-key.yaml
+```
+
 ---
 
 ## 🛠️ Production Concepts Demonstrated
